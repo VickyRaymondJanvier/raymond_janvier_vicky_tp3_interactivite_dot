@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdocjjpquvmnr"]
+
+[ext_resource type="PackedScene" uid="uid://cw4bikg7rl1pt" path="res://joueur.tscn" id="1_xhxl6"]
+
+[sub_resource type="GDScript" id="GDScript_bf6o8"]
+script/source = "extends Node2D
+
+@onready var collision_polygon_2dA: CollisionPolygon2D = $StaticBody2DA/CollisionPolygon2DA
+@onready var polygon_2dA: Polygon2D = $StaticBody2DA/CollisionPolygon2DA/Polygon2DA
+
+func _ready():
+	RenderingServer.set_default_clear_color(Color.GRAY)
+	polygon_2dA.polygon = collision_polygon_2dA.polygon
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_bf6o8")
+
+[node name="StaticBody2DA" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2DA" type="CollisionPolygon2D" parent="StaticBody2DA"]
+polygon = PackedVector2Array(16, 0, 88, 32, 136, 48, 208, 40, 304, 56, 368, 40, 440, 64, 504, 48, 584, 88, 680, 48, 768, 104, 888, 136, 1016, 584, 968, 720, 832, 856, 568, 872, 568, 608, 728, 496, 752, 328, 752, 192, 688, 248, 672, 296, 672, 304, 624, 304, 616, 544, 576, 520, 568, 232, 536, 240, 496, 240, 496, 280, 464, 280, 464, 312, 432, 312, 432, 616, 392, 616, 376, 328, 296, 152, 272, 216, 256, 216, 256, 288, 232, 400, 192, 240, 192, 144, 160, 152, 144, 120, 64, 168, 64, 440, 24, 440, 24, 48, 0, 48, 0, 8, 16, 0, -8, 0, 0, 888, 1344, 888, 1336, 8)
+
+[node name="Joueur" parent="StaticBody2DA/CollisionPolygon2DA" instance=ExtResource("1_xhxl6")]
+position = Vector2(-8, 24)
+
+[node name="Polygon2DA" type="Polygon2D" parent="StaticBody2DA/CollisionPolygon2DA"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(24, 336, 64, 336, 64, 440, 24, 440)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(384, 488, 432, 488, 432, 616, 392, 616)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PackedVector2Array(576, 440, 624, 424, 616, 544, 576, 520)
