@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cw4bikg7rl1pt"]
+[gd_scene load_steps=12 format=3 uid="uid://cw4bikg7rl1pt"]
 
-[ext_resource type="Texture2D" uid="uid://bbcfm6wslv05e" path="res://assets/personnage.png" id="1_2d0qe"]
+[ext_resource type="Texture2D" uid="uid://cpoh25f522e8v" path="res://assets/png/personnage.png" id="1_2d0qe"]
 
 [sub_resource type="GDScript" id="GDScript_2d0qe"]
 script/source = "extends CharacterBody2D
@@ -77,43 +77,39 @@ func update_animations(input_axis):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0tex"]
 size = Vector2(14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2d0qe"]
-atlas = ExtResource("1_2d0qe")
-region = Rect2(0, 0, 24, 21)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_mc3kx"]
 atlas = ExtResource("1_2d0qe")
-region = Rect2(144, 0, 24, 21)
+region = Rect2(0, 0, 24, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhxrk"]
 atlas = ExtResource("1_2d0qe")
-region = Rect2(24, 0, 24, 21)
+region = Rect2(144, 0, 24, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j7mc"]
 atlas = ExtResource("1_2d0qe")
-region = Rect2(48, 0, 24, 21)
+region = Rect2(24, 0, 24, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wr1qv"]
 atlas = ExtResource("1_2d0qe")
-region = Rect2(72, 0, 24, 21)
+region = Rect2(48, 0, 24, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kqiic"]
 atlas = ExtResource("1_2d0qe")
-region = Rect2(96, 0, 24, 21)
+region = Rect2(72, 0, 24, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2l6sa"]
 atlas = ExtResource("1_2d0qe")
-region = Rect2(120, 0, 24, 21)
+region = Rect2(96, 0, 24, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cmlh"]
 atlas = ExtResource("1_2d0qe")
-region = Rect2(0, 0, 24, 21)
+region = Rect2(120, 0, 24, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_neeqg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2d0qe")
+"texture": SubResource("AtlasTexture_mc3kx")
 }],
 "loop": true,
 "name": &"idle",
@@ -121,16 +117,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mc3kx")
+"texture": SubResource("AtlasTexture_nhxrk")
 }],
 "loop": true,
 "name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nhxrk")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7j7mc")
 }, {
@@ -161,11 +154,10 @@ position = Vector2(15, 1)
 shape = SubResource("RectangleShape2D_r0tex")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(15.142858, -0.75)
-scale = Vector2(0.92857146, 0.9285714)
+position = Vector2(15.1429, -0.75)
+scale = Vector2(0.928571, 0.928571)
 sprite_frames = SubResource("SpriteFrames_neeqg")
 animation = &"run"
-frame_progress = 0.5212764
 
 [node name="CayoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.2
